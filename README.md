@@ -16,7 +16,7 @@ This library heavily makes use of `reflect` package and hence will have an **imp
 1. [Map](#Map)
 2. [Filter](#Filter)
 3. [Reduce](#Reduce)
-4. [Any](#Any)
+4. [Any](#Any-or-Some) or [Some](#Any-or-Some)
 
 ## Usages
 
@@ -142,9 +142,9 @@ func main() {
 }
 ```
 
-### Any
+### Any or Some
 
-Any checks if predicate returns truthy for any element of collection. Iteration is stopped once predicate returns truthy.
+Any or Some checks if predicate returns truthy for any element of collection. Iteration is stopped once predicate returns truthy.
 For more [docs](https://godoc.org/github.com/thecasualcoder/godash#Any).
 
 ```go
@@ -168,7 +168,7 @@ func main() {
 	}
 	var output int
 
-	output, _ := godash.Any(input, func(person Person) bool {
+	output, _ := godash.Some(input, func(person Person) bool {
 		return person.Age < 18
 	})
 
